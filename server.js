@@ -22,7 +22,7 @@ hbs.registerHelper('getUserInfo',()=>{
 app.use((req,res,next)=>{
   var logDate = new Date().toDateString();
   var logData = `${logDate}: ${req.ip} ${req.method} ${req.path}`;
-  console.log(logData);
+//  console.log(logData);
   fs.appendFile('acces.log',logData+'\n','utf8',(error)=>{
     if (error) throw error;
   });
@@ -66,6 +66,14 @@ app.get('/about',(req,res)=>{
   console.log('about acessed !');
   res.render('about.hbs',{
     pageTitle:'About page dinamic !',
+
+  });
+});
+
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitle:'Portofolio Projects !',
+    portofolioMessage:'This is the portofolio !'
 
   });
 });
