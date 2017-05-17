@@ -29,16 +29,16 @@ app.use((req,res,next)=>{
   next();
   });
 
-app.use((req,res,next)=>{
-
-  res.render('mentenance.hbs',{
-    pageTitle:'Mentenance page',
-    welcomeMessage:'The site is in mentenance we will comeback soon !!',
-
-  });
-
-
-  });
+// app.use((req,res,next)=>{
+//
+//   res.render('mentenance.hbs',{
+//     pageTitle:'Mentenance page',
+//     welcomeMessage:'The site is in mentenance we will comeback soon !!',
+//
+//   });
+//
+//
+//   });
 
 app.use(express.static(__dirname + '/public'));
 
